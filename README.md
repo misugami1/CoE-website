@@ -1,0 +1,2 @@
+# CoE-website
+Static web
