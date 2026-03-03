@@ -31,8 +31,14 @@ body {
 .main-nav a {
     text-decoration: none;
     color: #000;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Make top navigation links red and underlined on hover */
+.main-nav a:hover {
+    color: #d82028; /* red shade used elsewhere */
+    text-decoration: underline;
 }
 
 .main-nav i {
@@ -40,26 +46,26 @@ body {
 }
 
 .logo-left img {
-    max-width: 40px;
+    max-width: 80px; 
     height: auto;
 }
 .logo-right img {
-    max-width: 40px;
+    max-width: 80px; 
     height: auto;
 }
 
 /* --- Hero Banner --- */
 .hero-banner {
-    background-color: #d82028; /* BatStateU Red */
+    /* replace red with Header.jpg background */
+    background: url('images/Campus.png') no-repeat center center;
+    background-size: cover;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
+    /* keep a fixed height or adjust as needed */
     height: 350px;
     overflow: hidden;
 }
 
+/* legacy content rules (unused after markup change) */
 .hero-text h1 {
     color: #fff;
     font-size: 3.5rem;
@@ -88,6 +94,7 @@ body {
     text-align: center;
 }
 
+
 .secondary-nav ul {
     list-style: none;
     display: flex;
@@ -100,6 +107,10 @@ body {
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
+}
+
+.secondary-nav a:hover {
+    color: #d82028; /* red shade used elsewhere */
 }
 
 /* --- Main Container --- */
@@ -358,7 +369,7 @@ body {
 }
 
 .curriculum-table thead {
-    background-color: #d82028;
+    background-color: #312c2c;
     color: #fff;
 }
 
@@ -366,7 +377,7 @@ body {
     padding: 12px 15px;
     text-align: left;
     font-weight: 600;
-    border-bottom: 2px solid #d82028;
+    border-bottom: 2px solid #312c2c;
 }
 
 .curriculum-table td {
@@ -400,4 +411,34 @@ body {
 
 .curriculum-table i {
     font-size: 1.1rem;
+}
+
+/* --- Accreditation Table --- */
+.accreditation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.accreditation-table th,
+.accreditation-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.accreditation-table thead th {
+    background-color: #726969;
+    color: #fff;
+}
+
+.accreditation-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.accreditation-table tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
 }
