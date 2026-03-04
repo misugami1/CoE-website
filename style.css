@@ -1,6 +1,9 @@
 /* --- Global Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
+/* === ADDED FROM SECOND FILE === */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +11,13 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+/* === ADDED FROM SECOND FILE === */
+.college-name {
+    font-family: 'Lora', serif;
+}
+
 body {
-    background-color: #f4f4f4; /* Background behind content if needed */
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -35,9 +43,8 @@ body {
     font-weight: 700;
 }
 
-/* Make top navigation links red and underlined on hover */
 .main-nav a:hover {
-    color: #d82028; /* red shade used elsewhere */
+    color: #d82028;
     text-decoration: underline;
 }
 
@@ -45,27 +52,24 @@ body {
     font-size: 10px;
 }
 
-.logo-left img {
-    max-width: 80px; 
-    height: auto;
-}
+.logo-left img,
 .logo-right img {
-    max-width: 80px; 
+    max-width: 80px;
     height: auto;
 }
 
 /* --- Hero Banner --- */
 .hero-banner {
-    /* replace red with Header.jpg background */
     background: url('images/Campus.png') no-repeat center center;
     background-size: cover;
     position: relative;
-    /* keep a fixed height or adjust as needed */
-    height: 350px;
+
+    /* === MODIFIED FROM SECOND FILE === */
+    height: 400px; /* was 350px */
+
     overflow: hidden;
 }
 
-/* legacy content rules (unused after markup change) */
 .hero-text h1 {
     color: #fff;
     font-size: 3.5rem;
@@ -94,7 +98,6 @@ body {
     text-align: center;
 }
 
-
 .secondary-nav ul {
     list-style: none;
     display: flex;
@@ -110,52 +113,87 @@ body {
 }
 
 .secondary-nav a:hover {
-    color: #d82028; /* red shade used elsewhere */
+    color: #d82028;
 }
 
 /* --- Main Container --- */
 .main-container {
-    background: url('images/bg.png') no-repeat center center; /* faint background building bg.png */
+    background: url('images/bg.png') no-repeat center center;
     background-size: cover;
+
+    /* === ADDED FROM SECOND FILE === */
+    background-attachment: fixed;
+    position: relative;
+
     padding: 20px 10%;
     background-color: #f9f9f9;
+}
+
+/* === ADDED FROM SECOND FILE (Overlay System) === */
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .breadcrumbs {
     font-size: 12px;
     color: #666;
     margin-bottom: 30px;
+
+    /* === ADDED FROM SECOND FILE === */
+    position: relative;
+    z-index: 2;
 }
 
 /* --- College Intro --- */
 .college-intro h2 {
-    font-family: 'Times New Roman', serif;
+    /* === MODIFIED FROM SECOND FILE === */
     color: #d82028;
-    font-size: 2.4rem;
+    font-size: 2.2rem; /* was 2.4rem */
     font-weight: 600;
+
+    position: relative;
+    z-index: 2;
 }
 
 .black-line {
     border: none;
     height: 4px;
-    background-color: #333; /* Dark line under header */
+    background-color: #333;
     width: 100%;
     margin: 10px 0 20px 0;
 }
+
+/* === MODIFIED FROM SECOND FILE === */
 .red-line {
     border: none;
     height: 2px;
-    background-color: #d82028; /* Red line used in header and footer */
+
+    /* Changed from red to dark gray */
+    background-color: #333;
+
     width: 100%;
-    margin: 0px 0;
+    margin: 10px 0 20px 0;
+
+    position: relative;
+    z-index: 2;
 }
+
 .orange-line {
     border: none;
     height: 4px;
-    background: linear-gradient(to right, #f57c00, #ffff00, #f57c00); /* Orange line used in tabs */
+    background: linear-gradient(to right, #f57c00, #ffff00, #f57c00);
     width: 100%;
     margin: 0px 0;
 }
+
 .text-content p {
     margin-bottom: 15px;
     line-height: 1.6;
@@ -173,6 +211,10 @@ body {
     gap: 40px;
     margin-top: 40px;
     align-items: flex-start;
+
+    /* === ADDED FROM SECOND FILE === */
+    position: relative;
+    z-index: 2;
 }
 
 .goals-text {
@@ -211,6 +253,10 @@ body {
 .tabs-section {
     margin-top: 50px;
     background: #fff;
+
+    /* === ADDED FROM SECOND FILE === */
+    position: relative;
+    z-index: 2;
 }
 
 .tab-headers {
@@ -274,12 +320,12 @@ body {
 
 /* --- Blue Contact Banner --- */
 .blue-contact {
-    background-color: #f9f9f9; /* Blends with the container background above it */
-    padding: 20px 10% 40px 10%; /* The 10% left and right perfectly aligns it with the white box */
+    background-color: #f9f9f9;
+    padding: 20px 10% 40px 10%;
 }
 
 .contact-inner {
-    background-color: #1b65ad; /* Blue banner color */
+    background-color: #1b65ad;
     color: #fff;
     text-align: center;
     padding: 30px 20px;
