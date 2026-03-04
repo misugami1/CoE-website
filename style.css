@@ -115,7 +115,7 @@ body {
 
 /* --- Main Container --- */
 .main-container {
-    background: url('https://via.placeholder.com/1920x1080/eeeeee/eeeeee') no-repeat center center; /* faint background building placeholder */
+    background: url('images/bg.png') no-repeat center center; /* faint background building bg.png */
     background-size: cover;
     padding: 20px 10%;
     background-color: #f9f9f9;
