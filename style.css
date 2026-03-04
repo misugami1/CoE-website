@@ -129,19 +129,33 @@ body {
 
 /* --- College Intro --- */
 .college-intro h2 {
+    font-family: 'Times New Roman', serif;
     color: #d82028;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 600;
 }
 
-.red-line {
+.black-line {
     border: none;
-    height: 2px;
+    height: 4px;
     background-color: #333; /* Dark line under header */
     width: 100%;
     margin: 10px 0 20px 0;
 }
-
+.red-line {
+    border: none;
+    height: 2px;
+    background-color: #d82028; /* Red line used in header and footer */
+    width: 100%;
+    margin: 0px 0;
+}
+.orange-line {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, #f57c00, #ffff00, #f57c00); /* Orange line used in tabs */
+    width: 100%;
+    margin: 0px 0;
+}
 .text-content p {
     margin-bottom: 15px;
     line-height: 1.6;
