@@ -1,11 +1,17 @@
 /* --- Global Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+}
+
+/* Specific typography for the College name */
+.college-name {
+    font-family: 'Lora', serif;
 }
 
 body {
@@ -61,7 +67,7 @@ body {
     background-size: cover;
     position: relative;
     /* keep a fixed height or adjust as needed */
-    height: 350px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -115,16 +121,32 @@ body {
 
 /* --- Main Container --- */
 .main-container {
-    background: url('https://via.placeholder.com/1920x1080/eeeeee/eeeeee') no-repeat center center; /* faint background building placeholder */
+    background: url('images/bg.png') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     padding: 20px 10%;
     background-color: #f9f9f9;
+    position: relative;
+}
+
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .breadcrumbs {
     font-size: 12px;
     color: #666;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 /* --- College Intro --- */
@@ -133,6 +155,8 @@ body {
     color: #d82028;
     font-size: 2.4rem;
     font-weight: 600;
+    position: relative;
+    z-index: 2;
 }
 
 .black-line {
@@ -141,6 +165,8 @@ body {
     background-color: #333; /* Dark line under header */
     width: 100%;
     margin: 10px 0 20px 0;
+    position: relative;
+    z-index: 2;
 }
 .red-line {
     border: none;
@@ -173,6 +199,8 @@ body {
     gap: 40px;
     margin-top: 40px;
     align-items: flex-start;
+    position: relative;
+    z-index: 2;
 }
 
 .goals-text {
@@ -211,6 +239,8 @@ body {
 .tabs-section {
     margin-top: 50px;
     background: #fff;
+    position: relative;
+    z-index: 2;
 }
 
 .tab-headers {
