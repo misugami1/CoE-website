@@ -260,18 +260,23 @@ body {
 
 /* --- Blue Contact Banner --- */
 .blue-contact {
+    background-color: #f9f9f9; /* Blends with the container background above it */
+    padding: 20px 10% 40px 10%; /* The 10% left and right perfectly aligns it with the white box */
+}
+
+.contact-inner {
     background-color: #1b65ad; /* Blue banner color */
     color: #fff;
     text-align: center;
     padding: 30px 20px;
 }
 
-.blue-contact h2 {
+.contact-inner h2 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.blue-contact p {
+.contact-inner p {
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
