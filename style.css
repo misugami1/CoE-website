@@ -230,6 +230,7 @@ body {
 
 .goals-text p {
     font-size: 21px;
+    
     margin-bottom: 20px;
 }
 
@@ -321,9 +322,15 @@ body {
     max-width: 100%;
 }
 
-/* --- Blue Contact Banner --- */
+
 .blue-contact {
-    background-color: #f9f9f9;
+    /* This layers a semi-transparent #f9f9f9 color ON TOP of the image */
+    background: linear-gradient(rgba(249, 249, 249, 0.8), rgba(249, 249, 249, 0.8)), 
+                url('images/bg.png') no-repeat center center;
+    
+    background-size: cover;
+    background-attachment: fixed;
+    
     padding: 20px 10% 40px 10%;
 }
 
