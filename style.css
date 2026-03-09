@@ -27,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #fff;
+    background-color: #f3f3f3;
 }
 
 .main-nav ul {
@@ -52,10 +52,17 @@ body {
     font-size: 10px;
 }
 
-.logo-left img,
-.logo-right img {
-    max-width: 80px;
+.logo-left img {
+    max-width: 120px;
     height: auto;
+    position: relative;
+    left: 200px;
+}
+.logo-right img {
+    max-width: 120px;
+    height: auto;
+    position: relative;
+    right: 200px;
 }
 
 /* --- Hero Banner --- */
@@ -65,7 +72,7 @@ body {
     position: relative;
 
     /* === MODIFIED FROM SECOND FILE === */
-    height: 400px; /* was 350px */
+    height: 400px; /* was 350px */ 
 
     overflow: hidden;
 }
