@@ -152,7 +152,7 @@ body {
 
 /* --- Hero Banner --- */
 .hero-banner {
-    background: #f8f8f8 url('images/Campus.png') no-repeat center center;
+    background: #f8f8f8 url('images/Header.jpg') no-repeat center center;
     background-size: contain; /* This forces the whole image to show! */
     position: relative;
     width: 100%;
@@ -160,7 +160,7 @@ body {
     /* Remove height: 400px; and use aspect-ratio instead. 
        Adjust these numbers (Width / Height) to match your actual image dimensions. 
        For example, a wide banner is usually around 16 / 5 or 3 / 1 */
-    aspect-ratio: 2048 / 452; 
+    aspect-ratio: 1905 / 407; 
     
     overflow: hidden;
 }
