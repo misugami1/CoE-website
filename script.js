@@ -1,3 +1,4 @@
+// === Tab Switching Logic ===
 // Function to handle tab switching
 function openTab(evt, tabName) {
     // Declare all variables
@@ -19,3 +20,28 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+// === Mobile Menu Toggle Logic ===
+// Wait for the document to load so the elements exist before attaching listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Main Menu Elements ---
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // This makes the hamburger turn red!
+        });
+    }
+
+    // --- Secondary Menu Elements (NEW) ---
+    const secondaryMenuToggle = document.getElementById('mobile-secondary-menu');
+    const secondaryNavMenu = document.getElementById('secondary-nav-menu');
+
+    if (secondaryMenuToggle && secondaryNavMenu) {
+        secondaryMenuToggle.addEventListener('click', function() {
+            secondaryNavMenu.classList.toggle('active');
+            secondaryMenuToggle.classList.toggle('active'); 
+        });
+    }
+});
