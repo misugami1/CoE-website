@@ -160,7 +160,7 @@ body {
     /* Remove height: 400px; and use aspect-ratio instead. 
        Adjust these numbers (Width / Height) to match your actual image dimensions. 
        For example, a wide banner is usually around 16 / 5 or 3 / 1 */
-    aspect-ratio: 1905 / 407; 
+    aspect-ratio: 1905 / 405; 
     
     overflow: hidden;
 }
