@@ -125,7 +125,7 @@ body {
 
 /* --- Main Container --- */
 .main-container {
-    background: url('images/bgg.png') no-repeat center center;
+    background: url('images/bghd2.png') no-repeat center center;
     background-size: cover;
 
     /* === ADDED FROM SECOND FILE === */
@@ -144,7 +144,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc 10%;
+    background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
     z-index: 1;
 }
@@ -325,8 +325,8 @@ body {
 
 
 .blue-contact {
-    /* This layers a semi-transparent #f9f9f9 color ON TOP of the image */
-    background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)), 
+    /* This layers a semi-transparent white overlay ON TOP of the image */
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.6)), 
                 url('images/bg.png') no-repeat center center;
     
     background-size: cover;
