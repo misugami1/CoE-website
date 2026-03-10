@@ -67,7 +67,7 @@ body {
 
 /* --- Hero Banner --- */
 .hero-banner {
-    background: url('images/Campus.png') no-repeat center center;
+    background: #f8f8f8 url('images/Campus.png') no-repeat center center;
     background-size: cover;
     position: relative;
 
@@ -144,18 +144,19 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #ccc 10%;
     pointer-events: none;
     z-index: 1;
 }
 
 .breadcrumbs {
-    font-size: 12px;
+    font-size: 18px;
     color: #666;
     margin-bottom: 30px;
 
     /* === ADDED FROM SECOND FILE === */
     position: relative;
+    right: 200px;
     z-index: 2;
 }
 
@@ -163,7 +164,7 @@ body {
 .college-intro h2 {
     /* === MODIFIED FROM SECOND FILE === */
     color: #d82028;
-    font-size: 2.2rem; /* was 2.4rem */
+    font-size: 3rem; /* was 2.4rem */
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
@@ -190,7 +191,7 @@ body {
 .orange-line {
     border: none;
     height: 4px;
-    background: linear-gradient(to right, #f57c00, #ffff00, #f57c00);
+    background: linear-gradient(to right, #f57c00, #ffd000, #f57c00);
     width: 100%;
     margin: 0px 0;
 }
@@ -325,7 +326,7 @@ body {
 
 .blue-contact {
     /* This layers a semi-transparent #f9f9f9 color ON TOP of the image */
-    background: linear-gradient(rgba(249, 249, 249, 0.8), rgba(249, 249, 249, 0.8)), 
+    background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)), 
                 url('images/bg.png') no-repeat center center;
     
     background-size: cover;
