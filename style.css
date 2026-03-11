@@ -389,6 +389,110 @@ body {
 }
 
 /* --- Tabs Section --- */
+/* --- College Figures Section Styling --- */
+.section-header {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.section-header h1 {
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 0;
+    color: #ff002b;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #ff002b;
+}
+
+/* Layout for Table & Chart side-by-side */
+.figures-row {
+    margin-bottom: 40px;
+}
+
+.data-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.data-group.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+/* 1. Shrink the table slightly to make room for the chart */
+.table-container {
+    width: 35%;
+}
+
+/* 2. Expand the chart container horizontally and vertically */
+.chart-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+/* Table Design */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    border: 1px solid #ddd;
+}
+.table-container td:first-child {
+    font-size: 12px;
+    font-weight: bold; 
+    color: #000000;    
+}
+
+.table-container td:nth-child(2) {
+    font-size: 12px;
+    font-weight: bold;
+}
+.table-container thead tr {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.table-container th, 
+.table-container td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.table-container th:nth-child(2), 
+.table-container td:nth-child(2) {
+    text-align: center;
+    width: 80px; 
+}
+
+.table-container tfoot tr {
+    background-color: #f1f1f1;
+}
+
+/* Make it stack on mobile */
+@media (max-width: 850px) {
+    .data-group, .data-group.reverse-layout {
+        flex-direction: column;
+    }
+    .table-container, .chart-container {
+        width: 100%;
+    }
+    .chart-container {
+        margin-top: 20px;
+    }
+}
+
 .tabs-section {
     margin-top: 50px;
     background: #fff;
