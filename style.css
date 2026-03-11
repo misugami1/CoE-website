@@ -502,7 +502,6 @@ body {
 
 .tab-headers {
     display: flex;
-    border-top: 4px solid #d82028;
     background-color: #f1f1f1;
 }
 
@@ -519,7 +518,8 @@ body {
 }
 
 .tab-link:hover {
-    background-color: #ddd;
+    background-color: #1b1b1b;
+    color: white;
 }
 
 .tab-link.active {
