@@ -22,7 +22,6 @@ function openTab(evt, tabName) {
 }
 
 // === Mobile Menu Toggle Logic ===
-// Wait for the document to load so the elements exist before attaching listeners
 document.addEventListener('DOMContentLoaded', function() {
     // --- Main Menu Elements ---
     const menuToggle = document.getElementById('mobile-menu');
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
     // --- INITIALIZE CHARTS AND TABLES HERE ---
     // ==========================================
-    // We run this inside DOMContentLoaded so it loads immediately
     if (document.getElementById('bs-table-body')) {
         populateTable(bsProgramsData, 'bs-table-body', 'bs-total-cell');
         populateTable(gradProgramsData, 'grad-table-body', 'grad-total-cell');
