@@ -269,7 +269,7 @@ body {
 }
 /* --- Main Container --- */
 .main-container {
-    background: url('images/bghd2.png') no-repeat center center;
+    background: url('images/light_ver.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -284,7 +284,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(204, 204, 204, 0.1); /* Corrected transparency syntax */
+    background-color: rgba(255, 255, 255, 0.5); /* Corrected transparency syntax */
     pointer-events: none;
     z-index: 1;
 }
@@ -565,6 +565,24 @@ body {
     background-size: cover;
     background-attachment: fixed;
     padding: 20px 10% 40px 10%;
+    position: relative;
+}
+
+.blue-contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blue-contact > * {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-inner {
