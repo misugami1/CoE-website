@@ -9,6 +9,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .college-name {
     font-family: 'Lora', serif;
 }
@@ -21,26 +25,21 @@ body {
 /* --- Top Header Main --- */
 .top-header {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 100px; /* Safe spacing from the edges */
-    background-color: #ffffff; 
+    padding: 10px 100px;
+    background-color: #ffffff;
     position: relative;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-/* * FIX: Force the visual order! 
- * This guarantees the layout is Left Logo -> Nav -> Right Logo 
- * regardless of how it is written in your HTML.
- */
 .logo-left { order: 1; }
-.main-nav { order: 2; }
+.main-nav  { order: 2; }
 .menu-toggle { order: 2; }
 .logo-right { order: 3; }
 
-/* Base Logo Sizes */
-.logo-left img, 
+.logo-left img,
 .logo-right img {
     max-width: 120px;
     height: auto;
@@ -49,7 +48,7 @@ body {
 
 .main-nav {
     display: flex;
-    justify-content: center; /* Centers the nav list */
+    justify-content: center;
 }
 
 .main-nav ul {
@@ -77,7 +76,7 @@ body {
 }
 
 .menu-toggle {
-    display: none; 
+    display: none;
 }
 
 .main-nav ul li:hover {
@@ -92,59 +91,65 @@ body {
     .menu-toggle {
         display: block;
         cursor: pointer;
-        z-index: 1000; 
-        margin: 0 auto; 
+        z-index: 1000;
+        margin: 0 auto;
     }
 
     .menu-toggle .bar {
         width: 30px;
         height: 4px;
-        background-color: #333; 
+        background-color: #333;
         margin: 6px auto;
         display: block;
         transition: 0.3s ease;
     }
 
     .menu-toggle.active .bar {
-        background-color: #d82028; 
+        background-color: #d82028;
     }
-    .logo-left img, 
+
+    .logo-left img,
     .logo-right img {
         max-width: 80px;
     }
+
     .main-nav {
-        display: none; 
-        position: absolute; 
-        top: 100%; 
+        display: none;
+        position: absolute;
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: #ffffff; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 999;
     }
 
     .main-nav.active {
-        display: block; 
+        display: block;
     }
+
     .main-nav ul {
-        flex-direction: column; 
-        gap: 0; 
+        flex-direction: column;
+        gap: 0;
     }
+
     .main-nav a {
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
         padding: 15px 25px;
         font-size: 15px;
-        white-space: normal; 
+        white-space: normal;
     }
+
     .main-nav ul li {
-        border-bottom: 1px solid #e0e0e0; 
-        border-left: 5px solid transparent; 
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 5px solid transparent;
     }
 
     .main-nav ul li:hover {
         background-color: #d82028;
     }
+
     .main-nav ul li a:hover {
         color: #ffffff;
     }
@@ -153,15 +158,10 @@ body {
 /* --- Hero Banner --- */
 .hero-banner {
     background: #f8f8f8 url('images/Header.jpg') no-repeat center center;
-    background-size: contain; /* This forces the whole image to show! */
+    background-size: contain;
     position: relative;
     width: 100%;
-    
-    /* Remove height: 400px; and use aspect-ratio instead. 
-       Adjust these numbers (Width / Height) to match your actual image dimensions. 
-       For example, a wide banner is usually around 16 / 5 or 3 / 1 */
-    aspect-ratio: 1905 / 405; 
-    
+    aspect-ratio: 1905 / 405;
     overflow: hidden;
 }
 
@@ -210,7 +210,7 @@ body {
 .secondary-nav a:hover {
     color: #d82028;
 }
-/* --- Secondary Menu Toggle Base (Hidden on Desktop) --- */
+
 .secondary-menu-toggle {
     display: none;
     cursor: pointer;
@@ -222,51 +222,49 @@ body {
     width: 30px;
     height: 4px;
     margin: 5px auto;
-    background-color: #ffffff; /* White bars to match the image */
+    background-color: #ffffff;
     transition: all 0.3s ease-in-out;
 }
 
 .secondary-menu-toggle.active .bar {
-    background-color: #d82028; 
+    background-color: #d82028;
 }
 
-/* --- Mobile Responsive Styles --- */
 @media (max-width: 1200px) {
-    /* Show hamburger on mobile */
     .secondary-menu-toggle {
-        display: block; 
+        display: block;
     }
 
-    /* Hide horizontal list by default, stack them vertically */
     .secondary-nav ul {
-        display: none; 
+        display: none;
         flex-direction: column;
         gap: 0;
         padding-bottom: 15px;
     }
 
-    /* Show vertical list when the 'active' class is added by JS */
     .secondary-nav ul.active {
-        display: flex; 
+        display: flex;
     }
 
-    /* Add dividers for mobile links to make them easier to tap */
     .secondary-nav ul li {
-        border-bottom: 1px solid #444444; 
+        border-bottom: 1px solid #444444;
     }
 
     .secondary-nav a {
         display: block;
         padding: 15px 20px;
-        text-align: left; /* Aligns text to the left for standard mobile dropdowns */
+        text-align: left;
     }
+
     .secondary-nav ul li:hover {
-    background-color: #d82028;
+        background-color: #d82028;
     }
+
     .secondary-nav ul li a:hover {
         color: #ffffff;
     }
 }
+
 /* --- Main Container --- */
 .main-container {
     background: url('images/light_ver.png') no-repeat center center;
@@ -284,7 +282,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* Corrected transparency syntax */
+    background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
     z-index: 1;
 }
@@ -293,7 +291,7 @@ body {
     font-size: 18px;
     color: #666;
     margin-bottom: 30px;
-    right: 10%; 
+    right: 10%;
     position: relative;
     z-index: 2;
 }
@@ -301,7 +299,7 @@ body {
 /* --- College Intro --- */
 .college-intro h2 {
     color: #d82028;
-    font-size: 3rem; 
+    font-size: 3rem;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
@@ -321,7 +319,7 @@ body {
     height: 2px;
     background: #d82028;
     width: 100%;
-    margin: 0px 0;
+    margin: 0;
 }
 
 .orange-line {
@@ -329,7 +327,7 @@ body {
     height: 4px;
     background: linear-gradient(to right, #f57c00, #ffd000, #f57c00);
     width: 100%;
-    margin: 0px 0;
+    margin: 0;
 }
 
 .text-content p {
@@ -354,7 +352,7 @@ body {
 }
 
 .goals-text {
-    color:#000;
+    color: #000;
     flex: 1;
 }
 
@@ -388,8 +386,7 @@ body {
     border-radius: 5px;
 }
 
-/* --- Tabs Section --- */
-/* --- College Figures Section Styling --- */
+/* --- College Figures Section --- */
 .section-header {
     text-align: center;
     margin: 20px 0 30px 0;
@@ -411,7 +408,6 @@ body {
     color: #ff002b;
 }
 
-/* Layout for Table & Chart side-by-side */
 .figures-row {
     margin-bottom: 40px;
 }
@@ -427,12 +423,10 @@ body {
     flex-direction: row-reverse;
 }
 
-/* 1. Shrink the table slightly to make room for the chart */
 .table-container {
     width: 35%;
 }
 
-/* 2. Expand the chart container horizontally and vertically */
 .chart-container {
     width: 60%;
     display: flex;
@@ -441,58 +435,63 @@ body {
     min-height: 450px;
 }
 
-/* Table Design */
 .table-container table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
     border: 1px solid #ddd;
 }
+
 .table-container td:first-child {
     font-size: 12px;
-    font-weight: bold; 
-    color: #000000;    
+    font-weight: bold;
+    color: #000000;
 }
 
 .table-container td:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
 }
+
 .table-container thead tr {
     background-color: #0d6efd;
     color: white;
 }
 
-.table-container th, 
+.table-container th,
 .table-container td {
     border: 1px solid #ddd;
     padding: 8px 10px;
     text-align: left;
 }
 
-.table-container th:nth-child(2), 
+.table-container th:nth-child(2),
 .table-container td:nth-child(2) {
     text-align: center;
-    width: 80px; 
+    width: 80px;
 }
 
 .table-container tfoot tr {
     background-color: #f1f1f1;
 }
 
-/* Make it stack on mobile */
 @media (max-width: 850px) {
-    .data-group, .data-group.reverse-layout {
+    .data-group,
+    .data-group.reverse-layout {
         flex-direction: column;
     }
-    .table-container, .chart-container {
+
+    .table-container,
+    .chart-container {
         width: 100%;
     }
+
     .chart-container {
         margin-top: 20px;
     }
 }
 
+/* --- Tabs Section --- */
 .tabs-section {
     margin-top: 50px;
     background: #fff;
@@ -531,7 +530,7 @@ body {
     display: none;
     padding: 30px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tab-content h3 {
@@ -543,6 +542,12 @@ body {
     margin-bottom: 15px;
     line-height: 1.6;
     text-align: justify;
+}
+
+@media (max-width: 850px) {
+    .tab-headers {
+        flex-direction: column;
+    }
 }
 
 .thin-line {
@@ -559,8 +564,9 @@ body {
     max-width: 100%;
 }
 
+/* --- Blue Contact Section --- */
 .blue-contact {
-    background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)), 
+    background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)),
                 url('images/bg.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -602,7 +608,9 @@ body {
     margin-bottom: 5px;
 }
 
-/* --- Main Footer --- */
+/* ========================================= */
+/* --- MAIN FOOTER                       --- */
+/* ========================================= */
 .main-footer {
     background-color: #333333;
     color: #fff;
@@ -612,55 +620,108 @@ body {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
+    align-items: flex-start;
+    padding: 0 5%;
     margin-bottom: 30px;
+    gap: 20px;
+}
+
+/* --- Footer Left --- */
+.footer-left {
+    flex: 1;
+    max-width: 55%;
 }
 
 .footer-left h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 5px;
+    white-space: nowrap;
 }
 
 .italic-text {
     font-style: italic;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
 }
 
 .stats {
-    list-style: none;
+    list-style: disc;
+    margin-left: 20px;
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-.contact-btn {
-    display: inline-block;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.social-icons a {
-    display: inline-block;
-    background: #fff;
-    color: #333;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+/* --- Footer Actions: Contact Us + Social Icons --- */
+.footer-actions {
     text-align: center;
-    line-height: 35px;
-    margin: 0 5px;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.footer-right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+.contact-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.contact-btn i {
+    font-size: 1.1rem;
+}
+
+/* Social icons in horizontal rows */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 210px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #333;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 15px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.social-icons a:hover {
+    background: #e6e6e6;
+    color: #333;
+}
+
+/* --- Footer Right: Graph + Logo --- */
+.footer-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    max-width: 45%;
+}
+
+.footer-right img {
+    width: 45%;
+    height: auto;
+    max-width: 200px;
+    min-width: 80px;
+}
+
+/* --- Footer Bottom Bar --- */
 .footer-bottom {
     background-color: #fff;
     color: #333;
@@ -670,6 +731,39 @@ body {
     font-weight: 600;
 }
 
+/* --- Footer Responsive --- */
+@media (max-width: 850px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-left {
+        max-width: 100%;
+    }
+
+    .footer-left h3 {
+        white-space: normal;
+    }
+
+    .footer-right {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .social-icons {
+        max-width: 250px;
+    }
+}
+
+/* --- Back to Top Button --- */
 .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -683,6 +777,15 @@ body {
     line-height: 40px;
     text-decoration: none;
     font-size: 20px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* --- Curriculum Table --- */
@@ -691,7 +794,7 @@ body {
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .curriculum-table thead {
@@ -745,7 +848,7 @@ body {
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .accreditation-table th,
@@ -767,4 +870,20 @@ body {
 .accreditation-table tbody tr:hover {
     background-color: #f5f5f5;
     transition: background-color 0.3s ease;
+}
+
+/* --- Utility Classes --- */
+.zoom-effect {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.2);
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
 }

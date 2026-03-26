@@ -21,9 +21,9 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-// === Mobile Menu Toggle Logic ===
+// Mobile Menu Toggle Logic
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Main Menu Elements ---
+    //Main Menu Elements
     const menuToggle = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Secondary Menu Elements (NEW) ---
+    //econdary Menu Elements
     const secondaryMenuToggle = document.getElementById('mobile-secondary-menu');
     const secondaryNavMenu = document.getElementById('secondary-nav-menu');
 
@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================
     // --- INITIALIZE CHARTS AND TABLES HERE ---
-    // ==========================================
     if (document.getElementById('bs-table-body')) {
         populateTable(bsProgramsData, 'bs-table-body', 'bs-total-cell');
         populateTable(gradProgramsData, 'grad-table-body', 'grad-total-cell');
@@ -56,9 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ==========================================
-// --- EDITABLE DATA AREA FOR FIGURES ---
-// ==========================================
+// EDITABLE DATA AREA FOR FIGURES
 const bsProgramsData = [
     { program: "B.S. Aerospace Engineering", code: "BSAeE", total: 434 },
     { program: "B.S. Automotive Engineering", code: "BSAE", total: 122 },
@@ -108,7 +104,7 @@ const chartColors = [
     '#20B2AA', '#4682B4'
 ];
 
-// --- Helper Functions for Data generation ---
+//Helper Functions for Data generation
 function populateTable(data, tbodyId, totalCellId) {
     const tableBody = document.getElementById(tbodyId);
     if (!tableBody) return; // safety check
@@ -164,3 +160,18 @@ function createPieChart(ctxId, data) {
         }
     });
 }
+
+// 1. Grab the button from the HTML
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+// 2. Listen to the window for any scrolling
+window.addEventListener("scroll", function() {
+    
+    // 3. If the user scrolls down more than 300 pixels, add the 'show' class
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add("show");
+    } else {
+        // Otherwise, if they are near the top, remove the 'show' class
+        backToTopBtn.classList.remove("show");
+    }
+});
