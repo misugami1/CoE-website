@@ -22,7 +22,7 @@ body {
     color: #333;
 }
 
-/* --- Top Header Main --- */
+/* Top Header Main */
 .top-header {
     display: flex;
     justify-content: space-between;
@@ -155,7 +155,7 @@ body {
     }
 }
 
-/* --- Hero Banner --- */
+/* Hero Banner */
 .hero-banner {
     background: #f8f8f8 url('images/Header.jpg') no-repeat center center;
     background-size: contain;
@@ -186,7 +186,7 @@ body {
     object-fit: cover;
 }
 
-/* --- Secondary Navigation --- */
+/* Secondary Navigation */
 .secondary-nav {
     background-color: #333333;
     padding: 12px 0;
@@ -265,7 +265,7 @@ body {
     }
 }
 
-/* --- Main Container --- */
+/* Main Container */
 .main-container {
     background: url('images/light_ver.png') no-repeat center center;
     background-size: cover;
@@ -296,7 +296,7 @@ body {
     z-index: 2;
 }
 
-/* --- College Intro --- */
+/* College Intro */
 .college-intro h2 {
     color: #d82028;
     font-size: 3rem;
@@ -341,7 +341,7 @@ body {
     font-weight: bold;
 }
 
-/* --- Goals and Objectives --- */
+/* Goals and Objectives */
 .goals-objectives {
     display: flex;
     gap: 40px;
@@ -386,7 +386,7 @@ body {
     border-radius: 5px;
 }
 
-/* --- College Figures Section --- */
+/* College Figures Section */
 .section-header {
     text-align: center;
     margin: 20px 0 30px 0;
@@ -491,7 +491,7 @@ body {
     }
 }
 
-/* --- Tabs Section --- */
+/* Tabs Section */
 .tabs-section {
     margin-top: 50px;
     background: #fff;
@@ -564,7 +564,7 @@ body {
     max-width: 100%;
 }
 
-/* --- Blue Contact Section --- */
+/* Blue Contact Section */
 .blue-contact {
     background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)),
                 url('images/bg.png') no-repeat center center;
@@ -608,9 +608,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* ========================================= */
-/* --- MAIN FOOTER                       --- */
-/* ========================================= */
+/* MAIN FOOTER */
 .main-footer {
     background-color: #333333;
     color: #fff;
@@ -626,7 +624,7 @@ body {
     gap: 20px;
 }
 
-/* --- Footer Left --- */
+/* Footer Left */
 .footer-left {
     flex: 1;
     max-width: 55%;
@@ -652,7 +650,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* --- Footer Actions: Contact Us + Social Icons --- */
+/* Footer Actions: Contact Us + Social Icons */
 .footer-actions {
     text-align: center;
     display: flex;

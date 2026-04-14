@@ -1,7 +1,5 @@
-// === Tab Switching Logic ===
 // Function to handle tab switching
 function openTab(evt, tabName) {
-    // Declare all variables
     var i, tabcontent, tablinks;
 
     // Get all elements with class="tab-content" and hide them
@@ -30,11 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active'); // This makes the hamburger turn red!
+            menuToggle.classList.toggle('active');
         });
     }
 
-    //econdary Menu Elements
     const secondaryMenuToggle = document.getElementById('mobile-secondary-menu');
     const secondaryNavMenu = document.getElementById('secondary-nav-menu');
 
@@ -104,13 +101,12 @@ const chartColors = [
     '#20B2AA', '#4682B4'
 ];
 
-//Helper Functions for Data generation
 function populateTable(data, tbodyId, totalCellId) {
     const tableBody = document.getElementById(tbodyId);
-    if (!tableBody) return; // safety check
+    if (!tableBody) return;
     
     let totalSum = 0;
-    tableBody.innerHTML = ''; // clear existing content
+    tableBody.innerHTML = '';
 
     data.forEach(item => {
         const row = tableBody.insertRow();
@@ -161,17 +157,13 @@ function createPieChart(ctxId, data) {
     });
 }
 
-// 1. Grab the button from the HTML
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-// 2. Listen to the window for any scrolling
 window.addEventListener("scroll", function() {
     
-    // 3. If the user scrolls down more than 300 pixels, add the 'show' class
     if (window.scrollY > 300) {
         backToTopBtn.classList.add("show");
     } else {
-        // Otherwise, if they are near the top, remove the 'show' class
         backToTopBtn.classList.remove("show");
     }
 });
