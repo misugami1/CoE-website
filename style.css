@@ -550,12 +550,49 @@ body {
     gap: 40px; /* Adds nice spacing between the top chart and LIMA chart */
 }
 
-@media (max-width: 850px) {
-    .charts-column {
-        width: 100%;
-    }
+/* Removes the fixed heights so content doesn't overlap */
+.department-filter-chart, 
+.grad-chart-container {
+    width: 100%; /* Fills the charts-column */
+    height: auto;
+    max-height: none; /* CRITICAL FIX: Stops the overlapping on mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    padding-top: 0; /* CRITICAL FIX: Removes the 10% spacing that pushes charts down */
 }
 
+.charts-column {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+/* New wrapper to handle Chart.js responsiveness perfectly */
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Controls the chart height consistently */
+    margin-bottom: 10px;
+}
+
+.canvas-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ensures buttons wrap nicely on mobile screens */
+.department-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Mobile Adjustments */
 @media (max-width: 850px) {
     .data-group,
     .data-group.reverse-layout {
@@ -563,12 +600,13 @@ body {
     }
 
     .table-container,
+    .charts-column,
     .chart-container {
         width: 100%;
     }
 
-    .chart-container {
-        margin-top: 20px;
+    .canvas-wrapper {
+        height: 300px; /* Makes charts slightly shorter on small screens */
     }
 }
 

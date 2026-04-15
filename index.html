@@ -126,79 +126,84 @@
                 <h2>SECOND SEMESTER AY : 2024 - 2025</h2>
             </header>
 
-            <section class="figures-row">
-                <div class="data-group">
-                    <div class="table-container">
-                        <table id="bs-table">
-                            <thead>
-                                <tr>
-                                    <th>PROGRAM</th>
-                                    <th>TOTAL</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bs-table-body">
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td><strong>TOTAL</strong></td>
-                                    <td><strong id="bs-total-cell">0</strong></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="chart-container department-filter-chart">
-                        <div class="department-chart-header">
-                            <h3 id="selected-department-name">Department Programs</h3>
-                        </div>
-                        <canvas id="departmentBarChart"></canvas>
-                        <div id="department-selector" class="department-selector"></div>
-                    </div>
+<section class="figures-row">
+    <div class="data-group">
+        
+        <div class="table-container">
+            <table id="bs-table">
+                <thead>
+                    <tr>
+                        <th>PROGRAM</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="bs-table-body">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong id="bs-total-cell">0</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="charts-column">
+            
+            <div class="chart-container department-filter-chart">
+                <div class="department-chart-header">
+                    <h3 id="selected-department-name">Department Programs</h3>
                 </div>
-            </section>
-            <section class="figures-row">
-                <div class="data-group">
-                    
-                    <div class="chart-container department-filter-chart lima-chart-position">
-                        
-                        <div class="department-chart-header">
-                            <h2>LIMA Campus</h2>
-                            <h2 id="lima-selected-department-name">Department Programs</h2>
-                        </div>
-                        
-                        <canvas id="limaDepartmentBarChart"></canvas>
-                        
-                        <div id="lima-department-selector" class="department-selector"></div>
-                    </div>
+                <div class="canvas-wrapper">
+                    <canvas id="departmentBarChart"></canvas>
                 </div>
-            </section>
-            <section class="figures-row">
-                <div class="data-group reverse-layout">
-                    <div class="table-container">
-                        <table id="grad-table">
-                            <thead>
-                                <tr>
-                                    <th>PROGRAM</th>
-                                    <th>TOTAL</th>
-                                </tr>
-                            </thead>
-                            <tbody id="grad-table-body">
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td><strong>TOTAL</strong></td>
-                                    <td><strong id="grad-total-cell">0</strong></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="chart-container grad-chart-container">
-                        <div class="department-chart-header">
-                            <h3>Graduate Programs</h3>
-                        </div>
-                        <canvas id="gradBarChart"></canvas>
-                    </div>
+                <div id="department-selector" class="department-selector"></div>
+            </div>
+
+            <div class="chart-container department-filter-chart">
+                <div class="department-chart-header">
+                    <h2>LIMA Campus</h2>
+                    <h3 id="lima-selected-department-name">Department Programs</h3>
                 </div>
-            </section>
+                <div class="canvas-wrapper">
+                    <canvas id="limaDepartmentBarChart"></canvas>
+                </div>
+                <div id="lima-department-selector" class="department-selector"></div>
+            </div>
+
+        </div> </div>
+</section>
+
+<section class="figures-row">
+    <div class="data-group reverse-layout">
+        <div class="table-container">
+            <table id="grad-table">
+                <thead>
+                    <tr>
+                        <th>PROGRAM</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="grad-table-body">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong id="grad-total-cell">0</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="chart-container grad-chart-container">
+            <div class="department-chart-header">
+                <h3>Graduate Programs</h3>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="gradBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
         </div>
             <div id="Accreditation" class="tab-content">
                 <h3>Accreditation</h3>
