@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
     <header class="top-header">
         <div class="logo-left zoom-effect">
             <img src="images/logo.png" alt="BatStateU Logo">
@@ -145,19 +146,33 @@
                             </tfoot>
                         </table>
                     </div>
-            
-                    <div class="chart-container pie-large">
-                        <canvas id="bsPieChart"></canvas>
+                    <div class="chart-container department-filter-chart">
+                        <div class="department-chart-header">
+                            <h3 id="selected-department-name">Department Programs</h3>
+                        </div>
+                        <canvas id="departmentBarChart"></canvas>
+                        <div id="department-selector" class="department-selector"></div>
                     </div>
                 </div>
             </section>
-
+            <section class="figures-row">
+                <div class="data-group">
+                    
+                    <div class="chart-container department-filter-chart lima-chart-position">
+                        
+                        <div class="department-chart-header">
+                            <h2>LIMA Campus</h2>
+                            <h2 id="lima-selected-department-name">Department Programs</h2>
+                        </div>
+                        
+                        <canvas id="limaDepartmentBarChart"></canvas>
+                        
+                        <div id="lima-department-selector" class="department-selector"></div>
+                    </div>
+                </div>
+            </section>
             <section class="figures-row">
                 <div class="data-group reverse-layout">
-                    <div class="chart-container pie-small">
-                        <canvas id="gradPieChart"></canvas>
-                    </div>
-
                     <div class="table-container">
                         <table id="grad-table">
                             <thead>
@@ -175,6 +190,12 @@
                                 </tr>
                             </tfoot>
                         </table>
+                    </div>
+                    <div class="chart-container grad-chart-container">
+                        <div class="department-chart-header">
+                            <h3>Graduate Programs</h3>
+                        </div>
+                        <canvas id="gradBarChart"></canvas>
                     </div>
                 </div>
             </section>
