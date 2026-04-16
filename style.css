@@ -236,7 +236,7 @@ body {
     height: 4px;
     margin: 5px auto;
     background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease;
 }
 
 .secondary-menu-toggle.active .bar {
@@ -547,20 +547,19 @@ body {
     width: 68%;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Adds nice spacing between the top chart and LIMA chart */
+    gap: 5px;
 }
 
-/* Removes the fixed heights so content doesn't overlap */
 .department-filter-chart, 
 .grad-chart-container {
-    width: 100%; /* Fills the charts-column */
+    width: 100%;
     height: auto;
-    max-height: none; /* CRITICAL FIX: Stops the overlapping on mobile */
+    max-height: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 15px;
-    padding-top: 0; /* CRITICAL FIX: Removes the 10% spacing that pushes charts down */
+    padding-top: 0;
 }
 
 .charts-column {
@@ -583,13 +582,17 @@ body {
     height: 100% !important;
 }
 
-/* Ensures buttons wrap nicely on mobile screens */
 .department-selector {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+/* This targets only the wrapper inside the Graduate section */
+.grad-chart-container .canvas-wrapper {
+    height: 700px;
 }
 
 /* Mobile Adjustments */
@@ -976,7 +979,7 @@ body {
 }
 
 .accreditation-table thead th {
-    background-color: #726969;
+    background-color: #1b65ad;
     color: #fff;
 }
 
