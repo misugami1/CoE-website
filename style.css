@@ -280,7 +280,7 @@ body {
 
 /* Main Container */
 .main-container {
-    background: url('images/light_ver.png') no-repeat center center;
+    background: url('images/faintbgg.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -688,8 +688,8 @@ body {
 
 /* Blue Contact Section */
 .blue-contact {
-    background: linear-gradient(rgba(249, 249, 249, 0.1), rgba(249, 249, 249, 0.1)),
-                url('images/bg.png') no-repeat center center;
+    background: linear-gradient(rgba(249, 249, 249, 0.05), rgba(249, 249, 249, 0.05)),
+                url('images/faintbgg.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 20px 10% 40px 10%;

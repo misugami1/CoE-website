@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDepartmentBarChart(deptProgramData[0].department);
         createBarChart('gradBarChart', gradProgramsData, 'Graduate Programs');
         // LIMA Campus Initialization:
-        renderLimaDepartmentSelector();
-        updateLimaDepartmentBarChart(limaDeptProgramData[0].department);
+        /*renderLimaDepartmentSelector();
+        updateLimaDepartmentBarChart(limaDeptProgramData[0].department); */
     }
 });
 
@@ -143,7 +143,7 @@ const deptProgramData = [
 ];
 
 // LIMA Data dynamically linked to bsProgramsData
-const limaDeptProgramData = [
+/* const limaDeptProgramData = [
     {
         department: "Department of Electronics Engineering",
         programs: [
@@ -166,6 +166,7 @@ const limaDeptProgramData = [
         programs: [ bsProgramsData.find(p => p.code === "BSTE") ]
     }
 ];
+*/
 
 const gradProgramsData = [
     { program: "Doctor of Philosophy in Electronics Engineering", code: "PhDECE", total: 51 },
@@ -403,7 +404,7 @@ function updateDepartmentBarChart(departmentName) {
         departmentChartInstance.update();
     }
 }
-
+/*
 // --- LIMA CAMPUS CHART LOGIC ---
 let limaDepartmentChartInstance = null;
 
@@ -483,7 +484,7 @@ function updateLimaDepartmentBarChart(departmentName) {
         limaDepartmentChartInstance.update();
     }
 }
-
+*/
 const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.addEventListener("scroll", function() {
