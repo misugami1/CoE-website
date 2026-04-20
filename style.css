@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #333;
 }
 
@@ -613,6 +613,93 @@ body {
     }
 }
 
+/* Center the whole dropdown section */
+.peo-so-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Dropdown container */
+.peo-so-dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    z-index: 6; /* higher than overlay */
+}
+
+/* BIG BUTTON */
+.dropbtn {
+    width: 540px;
+    padding: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 540px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Each item */
+.dropdown-content a {
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    transition: 0.3s;
+}
+
+/* HOVER = RED */
+.dropdown-content a:hover {
+    background-color: #d71920;
+    color: white;
+}
+
+/* ACTIVE (selected program stays red) */
+.dropdown-content a.active {
+    background-color: #d71920;
+    color: white;
+}
+
+/* Show dropdown */
+.dropdown-content.show {
+    display: block;
+}
+
+/* Content area center */
+.peo-so-content {
+    color: #000000;
+    text-align: left;
+    margin-top: 30px;
+    z-index: 5; /* higher than overlay */
+}
+
+/* Program content */
+.program-content {
+    color:#000000;
+    font-size: 18px;
+    display: none;
+}
+
+.program-content.active {
+    display: block;
+}
 /* Tabs Section */
 .tabs-section {
     margin-top: 50px;
@@ -703,7 +790,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
     z-index: 0;
 }

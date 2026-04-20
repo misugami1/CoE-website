@@ -27,6 +27,31 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+// Toggle dropdown visibility
+document.querySelector(".dropbtn").addEventListener("click", function () {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+});
+
+function showProgram(programId) {
+
+    // Hide all
+    document.querySelectorAll(".program-content").forEach(p => {
+        p.classList.remove("active");
+    });
+
+    // Show selected
+    document.getElementById(programId).classList.add("active");
+
+    // ACTIVE BUTTON STYLE
+    document.querySelectorAll(".dropdown-content a").forEach(link => {
+        link.classList.remove("active");
+    });
+    event.target.classList.add("active");
+
+    // Close dropdown
+    document.querySelector(".dropdown-content").classList.remove("show");
+}
+
 // Mobile Menu Toggle Logic
 document.addEventListener('DOMContentLoaded', function() {
     //Main Menu Elements
