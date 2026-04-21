@@ -295,7 +295,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    padding: 20px 16%;
+    padding: 20px 15%;
     background-color: #f9f9f9;
 }
 
@@ -852,7 +852,7 @@ body {
                 url('images/faintbgg.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 20px 16%;
+    padding: 20px 15%;
     position: relative;
 }
 
@@ -1150,6 +1150,16 @@ body {
 .accreditation-table tbody tr:hover {
     background-color: #f5f5f5;
     transition: background-color 0.3s ease;
+}
+
+@media (max-width: 850px) {
+    .curriculum-table th,
+    .curriculum-table td,
+    .accreditation-table th,
+    .accreditation-table td {
+        padding: 5px;
+        font-size: 14px;
+    }
 }
 
 /* --- Utility Classes --- */
