@@ -328,20 +328,20 @@ function createBarChart(ctxId, data, titleText) {
                     title: {
                         display: true,
                         text: 'Number of Students',
-                        font: { weight: 'bold', size: 12 }
+                        font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
-                        font: { size: 10 }
+                        font: { size: 12 }
                     }
                 },
                 y: {
                     title: {
                         display: true,
                         text: 'Programs',
-                        font: { weight: 'bold', size: 12 }
+                        font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
-                        font: { size: 10 }
+                        font: { size: 12 }
                     }
                 }
             }
@@ -404,7 +404,7 @@ function updateDepartmentBarChart(departmentName) {
                         title: {
                             display: true,
                             text: 'Number of Students',
-                            font: { weight: 'bold', size: 12 }
+                            font: { weight: 'bold', size: 14 }
                         },
                         ticks: {
                             font: { size: 10 }
@@ -414,10 +414,10 @@ function updateDepartmentBarChart(departmentName) {
                         title: {
                             display: true,
                             text: 'Programs',
-                            font: { weight: 'bold', size: 12 }
+                            font: { weight: 'bold', size: 14 }
                         },
                         ticks: {
-                            font: { size: 10 }
+                            font: { size: 12 }
                         }
                     }
                 }
