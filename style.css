@@ -427,7 +427,7 @@ body {
 }
 
 /* 📱 MOBILE VIEW */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .goals-objectives {
         flex-direction: column; /* stack */
     }
@@ -702,11 +702,10 @@ body {
     width: 420px;
 
     /* 🔥 ADD THESE */
-    max-height: 180px;   /* shows about 3 items */
+    max-height: 200px;   /* shows about 3 items */
     overflow-y: auto;    /* enables vertical scroll */
 
     box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
     overflow-x: hidden;
     z-index: 1;
 }
