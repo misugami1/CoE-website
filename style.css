@@ -17,6 +17,7 @@ html {
     font-family: 'Lora', serif;
 }
 
+
 body {
     background-color: #fff;
     color: #333;
@@ -297,7 +298,17 @@ body {
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
+}
+
+.black-line {
+    position: relative;   /* ADD THIS */
+    z-index: 2;           /* Higher than overlay */
+    border: none;
+    height: 4px;
+    background-color: #000000;
+    width: 100%;
+    margin: 10px 0 20px 0;
 }
 
 .breadcrumbs {
@@ -317,14 +328,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
     position: relative;
     z-index: 2;
-}
-
-.black-line {
-    border: none;
-    height: 4px;
-    background-color: #000000;
-    width: 100%;
-    margin: 10px 0 20px 0;
 }
 
 .red-line {
@@ -635,11 +638,16 @@ body {
     padding: 18px;
     font-size: 24px;
     font-weight: bold;
-    background-color: #000000;
-    color: white;
+    background-color: lightgray;
+    color: black;
     border: none;
     cursor: pointer;
     border-radius: 8px;
+}
+
+.dropbtn:hover{
+    background-color: black;
+    color: white;
 }
 
 /* Dropdown menu */
@@ -693,7 +701,8 @@ body {
 /* Program content */
 .program-content {
     color:#000000;
-    font-size: 18px;
+    line-height: 1.8;
+    font-size: 21px;
     display: none;
 }
 
