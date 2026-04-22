@@ -311,9 +311,15 @@ body {
     z-index: 0;
 }
 
+@media (max-width: 1200px) {
+    .main-container {
+        padding: 20px 5%;
+    }
+}
+
 .black-line {
-    position: relative;   /* ADD THIS */
-    z-index: 2;           /* Higher than overlay */
+    position: relative;
+    z-index: 2;
     border: none;
     height: 4px;
     background-color: #000000;
@@ -322,12 +328,18 @@ body {
 }
 
 .breadcrumbs {
-    font-size: 18px;
+    font-size: 12px;
     color: #666;
     margin-bottom: 30px;
     right: 10%;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 1200px) {
+    .breadcrumbs {
+        right: -5%;
+    }
 }
 
 /* College Intro */
@@ -396,11 +408,12 @@ body {
 .goals-text p {
     font-size: 18px;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .goals-text ul {
     padding-left: 20px; /* FIX: proper spacing */
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* FIX: you wrote ul ol (wrong), should be ul li */
@@ -420,29 +433,33 @@ body {
 
 .goals-image img {
     padding: 10px;
-    width: 600px;
-    max-width: 800px; /* keeps it from getting too big */
+    width: 580px;
+    max-width: 700px; /* keeps it from getting too big */
     height: auto;
     object-fit: cover;
 }
 
-/* 📱 MOBILE VIEW */
 @media (max-width: 1000px) {
     .goals-objectives {
-        flex-direction: column; /* stack */
+        flex-direction: column;
     }
 
     .goals-image {
-        order: 2; /* image goes BELOW text */
-        margin-top: 20px;
+        order: 2;
+
+        width: 85%;          /* 🔥 THIS is the key */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .goals-image img {
+        width: 490px;
+        height: auto;
+        display: block;
     }
 
     .goals-text {
         order: 1;
-    }
-
-    .goals-image img {
-        max-width: 100%;
     }
 }
 
@@ -670,11 +687,10 @@ body {
 .peo-so-sidebar {
     width: 350px;
     flex-shrink: 0; /* prevents shrinking on smaller screens */
-    max-height: 600px; /*keeps it from getting too tall */
+    height: auto; /*keeps it from getting too tall */
     overflow-y: auto; /* adds scroll if content exceeds max height */
-    background-color: #f2f2f2;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0,0.2);
-
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 /*Individual Program Buttons in the sidebar */
 .program-btn {
@@ -688,9 +704,11 @@ body {
     color: black;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #ffffff;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
+    z-index: 3;
 }
 .program-btn:last-child {
     border-bottom: none;
@@ -703,7 +721,6 @@ body {
     background-color: #d71920;
     color: white;
 }
-
 /* Content Area (Right Column) */
 .peo-so-content {
     flex-grow: 1;
@@ -714,13 +731,43 @@ body {
 .program-content {
     color: #000000;
     line-height: 2;
-    font-size: 14px;
+    font-size: 16px;
     display: none;
 }
 .program-content.active {
     display: block;
 }
 
+@media (max-width: 850px) {
+    .peo-so-section {
+        flex-direction: column;
+    }
+
+    .peo-so-sidebar {
+        width: 100%;
+        height: auto;
+        order: 2; /* sidebar goes BELOW content */
+
+        max-height: 300px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+
+    .peo-so-content {
+        order: 1;
+    }
+}
+
+.achivements-header {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+    color: black; /* or whatever color you want */
+    isolation: isolate; /* prevents parent background from bleeding */
+}
 
 /* Tabs Section */
 .tabs-section {
@@ -820,6 +867,12 @@ body {
 .blue-contact > * {
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 1200px) {
+    .blue-contact {
+        padding: 20px 5%;
+    }
 }
 
 .contact-inner {
@@ -956,7 +1009,7 @@ body {
 }
 
 /* --- Footer Responsive --- */
-@media (max-width: 850px) {
+@media (max-width: 800px) {
     .footer-container {
         flex-direction: column;
         gap: 30px;
