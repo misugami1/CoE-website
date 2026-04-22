@@ -27,8 +27,22 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+function showProgram(programId) {
+    document.querySelectorAll(".program-content").forEach(p => {
+        p.classList.remove("active");
+    });
+
+    document.getElementById(programId).classList.add("active");
+
+    document.querySelectorAll(".program-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
+}
+
 // Toggle dropdown visibility
-document.querySelector(".dropbtn").addEventListener("click", function () {
+/* document.querySelector(".dropbtn").addEventListener("click", function () {
     document.querySelector(".dropdown-content").classList.toggle("show");
 });
 
@@ -51,7 +65,7 @@ function showProgram(programId) {
     // Close dropdown
     document.querySelector(".dropdown-content").classList.remove("show");
 }
-
+*/
 // Mobile Menu Toggle Logic
 document.addEventListener('DOMContentLoaded', function() {
     //Main Menu Elements
@@ -78,10 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- INITIALIZE CHARTS AND TABLES HERE ---
     if (document.getElementById('bs-table-body')) {
         populateTable(bsProgramsData, 'bs-table-body', 'bs-total-cell');
-        populateTable(gradProgramsData, 'grad-table-body', 'grad-total-cell');
+        /* populateTable(gradProgramsData, 'grad-table-body', 'grad-total-cell'); */
         renderDepartmentSelector();
         updateDepartmentBarChart(deptProgramData[0].department);
-        createBarChart('gradBarChart', gradProgramsData, 'Graduate Programs');
+        /* createBarChart('gradBarChart', gradProgramsData, 'Graduate Programs'); */
         // LIMA Campus Initialization:
         /*renderLimaDepartmentSelector();
         updateLimaDepartmentBarChart(limaDeptProgramData[0].department); */
@@ -192,7 +206,7 @@ const deptProgramData = [
     }
 ];
 */
-
+/*
 const gradProgramsData = [
     { program: "Doctor of Philosophy in Electronics Engineering", code: "PhDECE", total: 51 },
     { program: "Doctor of Philosophy in Engineering Education", code: "PhDEEd", total: 33 },
@@ -210,6 +224,7 @@ const gradProgramsData = [
     { program: "Master of Science in Transportation System Engineering", code: "MSTE", total: 0 },
     { program: "Master of Engineering", code: "Master of Engineering", total: 75 }
 ];
+*/
 
 const chartColors = [
     '#324671', '#d29a28', '#c91e3e', '#7f8a9a', '#22a762', 
@@ -429,6 +444,7 @@ function updateDepartmentBarChart(departmentName) {
         departmentChartInstance.update();
     }
 }
+
 /*
 // --- LIMA CAMPUS CHART LOGIC ---
 let limaDepartmentChartInstance = null;
