@@ -53,9 +53,11 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const wrapper       = document.querySelector('.slides-wrapper');
+    const imageTrack    = document.querySelector('.slides-image-track');
     const slides        = document.querySelectorAll('.achievement-slide');
+    const captions      = document.querySelectorAll('.slide-caption');
     const dots          = document.querySelectorAll('.slide-dot');
+
     const prevBtn       = document.querySelector('.slide-prev');
     const nextBtn       = document.querySelector('.slide-next');
 
@@ -63,31 +65,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxImg   = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
+    // ===== ORG STRUCTURE LIGHTBOX =====
+    const orgImg = document.querySelector('.org-structure img');
+
+    orgImg.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = orgImg.src;
+        document.getElementById('lightbox-img').alt = orgImg.alt;
+        document.getElementById('lightbox').classList.add('open');
+    });
+    
     let current = 0;
     let timer;
 
-    // 🛑 Stop if no slides or wrapper
-    if (!wrapper || slides.length === 0) return;
+    // 🛑 Stop if critical elements missing
+    if (!imageTrack || slides.length === 0) return;
 
     // ===== SLIDESHOW =====
-
     function goTo(index) {
         // remove active safely
         slides[current]?.classList.remove('active');
+        captions[current]?.classList.remove('active');
         dots[current]?.classList.remove('active');
 
+        // wrap index
         current = (index + slides.length) % slides.length;
 
-        // move slides
-        wrapper.style.transform = `translateX(-${current * 100}%)`;
+        // move track
+        imageTrack.style.transform = `translateX(-${current * 100}%)`;
 
         // add active safely
         slides[current]?.classList.add('active');
+        captions[current]?.classList.add('active');
         dots[current]?.classList.add('active');
     }
 
     function startAuto() {
-        clearInterval(timer); // 🔥 prevents duplicate timers
+        clearInterval(timer); // 🔥 prevents stacking
         timer = setInterval(() => goTo(current + 1), 3000);
     }
 
@@ -96,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ===== BUTTONS =====
-
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             goTo(current - 1);
@@ -112,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ===== DOTS =====
-
     dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
             goTo(i);
@@ -123,12 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
     startAuto();
 
     // ===== LIGHTBOX =====
-
     if (lightbox && lightboxImg) {
 
         slides.forEach(slide => {
             const img = slide.querySelector('img');
-
             if (!img) return; // 🛑 avoid crash
 
             img.addEventListener('click', () => {
@@ -138,32 +147,25 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        if (lightboxClose) {
-            lightboxClose.addEventListener('click', () => {
-                closeLightbox();
-            });
-        }
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-
         function closeLightbox() {
             lightbox.classList.remove('open');
             lightboxImg.src = '';
         }
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
     }
 
 });
-
 // Toggle dropdown visibility
 /* document.querySelector(".dropbtn").addEventListener("click", function () {
     document.querySelector(".dropdown-content").classList.toggle("show");

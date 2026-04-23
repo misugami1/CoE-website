@@ -928,27 +928,27 @@ body {
 
 /* =========================
    SLIDESHOW CONTAINER
+   — only wraps the image track and arrows
 ========================= */
 
 .achievement-slideshow {
     position: relative;
-    width: 95%;
+    width: 100%;
     margin: 30px auto 0 auto;
-    border-radius: 10px;
-    background-color: transparent;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;          /* clips sliding images cleanly */
     z-index: 3;
-    overflow: hidden;
+    background-color: transparent;
 }
 
 /* =========================
-   SLIDES WRAPPER — holds all slides in a horizontal row
+   IMAGE TRACK
 ========================= */
 
-.slides-wrapper {
+.slides-image-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
-    align-items: stretch;
 }
 
 /* =========================
@@ -958,54 +958,14 @@ body {
 .achievement-slide {
     min-width: 100%;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
 }
 
 .achievement-slide img {
     width: 100%;
-    height: 480px;
+    height: 600px;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
     display: block;
     cursor: zoom-in;
-    flex-shrink: 0;           /* image never shrinks */
-}
-
-/* =========================
-   SLIDE CAPTION
-========================= */
-
-.slide-caption {
-    width: 100%;
-    padding: 14px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333333;
-    background-color: #f5f5f5;
-    border-radius: 0 0 10px 10px;
-    box-sizing: border-box;
-    height: 100px;            /* fixed height — never stretches the layout */
-    overflow-y: auto;         /* scroll if text is long */
-    line-height: 1.6;
-    text-align: left;
-    flex-shrink: 0;           /* caption never shrinks */
-}
-
-/* Scrollbar styling */
-.slide-caption::-webkit-scrollbar {
-    width: 5px;
-}
-
-.slide-caption::-webkit-scrollbar-track {
-    background: #f5f5f5;
-}
-
-.slide-caption::-webkit-scrollbar-thumb {
-    background-color: #d82028;
-    border-radius: 10px;
 }
 
 /* =========================
@@ -1014,7 +974,7 @@ body {
 
 .slide-arrow {
     position: absolute;
-    top: calc(480px / 2);     /* vertically centered on the image only, not caption */
+    top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.45);
     color: #ffffff;
@@ -1032,12 +992,50 @@ body {
     background-color: #d82028;
 }
 
-.slide-prev {
-    left: 12px;
+.slide-prev { left: 12px; }
+.slide-next { right: 12px; }
+
+/* =========================
+   CAPTION TRACK
+   — sits below the image box, never inside overflow
+========================= */
+
+.slides-caption-track {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-sizing: border-box;
 }
 
-.slide-next {
-    right: 12px;
+.slide-caption {
+    display: none;             /* hidden by default */
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1.7;
+    text-align: left;
+    height: 200px;            /* change this number — bigger = more visible text before scrolling */
+    overflow-y: auto;          /* scroll for long text */
+    box-sizing: border-box;
+}
+
+.slide-caption.active {
+    display: block;            /* only active caption shows */
+}
+
+/* Scrollbar */
+.slide-caption::-webkit-scrollbar {
+    width: 5px;
+}
+.slide-caption::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+.slide-caption::-webkit-scrollbar-thumb {
+    background-color: #d82028;
+    border-radius: 10px;
 }
 
 /* =========================
@@ -1048,9 +1046,15 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 10px 0;
+    padding: 10px 0 14px 0;
+    width: 100%;
+    margin: 0 auto;
     background-color: #f5f5f5;
     border-radius: 0 0 10px 10px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
 }
 
 .slide-dot {
@@ -1128,29 +1132,36 @@ body {
 
     .achievement-slide img {
         height: 260px;
-        border-radius: 0;
     }
 
     .slide-arrow {
-        top: calc(260px / 2);
-        font-size: 30px;
-        padding: 4px 12px;
+        font-size: 28px;
+        padding: 4px 10px;
+    }
+
+    .slides-caption-track {
+        width: 100%;
+        border-left: none;
+        border-right: none;
     }
 
     .slide-caption {
-        border-radius: 0;
         font-size: 13px;
         padding: 10px 14px;
-        height: 80px;
+        height: 90px; /* change this number */
     }
 
     .slide-dots {
+        width: 100%;
         border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
     }
 
     .lightbox-img {
-        max-width: 95vw;
-        max-height: 80vh;
+        max-width: 900px;
+        max-height: 800px;
     }
 }
 
@@ -1211,7 +1222,6 @@ body {
     .tab-headers {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 columns */
-        gap: 10px;
     }
 
     /* Make the 4th item go to next row and center it */
@@ -1239,6 +1249,7 @@ body {
 
 .org-structure img {
     max-width: 100%;
+    cursor: zoom-in;    /* hints user it is clickable */
 }
 
 /* Blue Contact Section */
