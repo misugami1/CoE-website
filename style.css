@@ -97,6 +97,31 @@ body {
     text-decoration-thickness: 2px;
 }
 
+@media (max-width: 1300px) {
+    .main-nav ul {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /* more control */
+        gap: 10px;
+        justify-items: center;
+    }
+    .main-nav a {
+        font-size: 14px;
+    }
+
+    /* Top row (5 items centered) */
+    .main-nav ul li:nth-child(1) { grid-column: 1 / 3; }
+    .main-nav ul li:nth-child(2) { grid-column: 3 / 5; }
+    .main-nav ul li:nth-child(3) { grid-column: 5 / 7; }
+    .main-nav ul li:nth-child(4) { grid-column: 7 / 9; }
+    .main-nav ul li:nth-child(5) { grid-column: 9 / 11; }
+    .main-nav ul li:nth-child(6) { grid-column: 11 / 11; }
+
+    /* Bottom row (4 items centered) */
+    .main-nav ul li:nth-child(7) { grid-column: 4 / 6; }
+    .main-nav ul li:nth-child(8) { grid-column: 6 / 8; }
+    .main-nav ul li:nth-child(9) { grid-column: 8 / 10; }
+}
+
 @media (max-width: 1200px) {
     .top-header {
         padding: 10px 5%;
@@ -244,16 +269,30 @@ body {
     background-color: #d82028;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
+
     .secondary-menu-toggle {
         display: block;
+    }
+
+    .secondary-nav {
+        position: relative; /* anchor for absolute child */
     }
 
     .secondary-nav ul {
         display: none;
         flex-direction: column;
         gap: 0;
-        padding-bottom: 15px;
+
+        position: absolute;
+        top: 100%;   /* below the nav bar */
+        left: 0;
+        width: 100%;
+
+        background: #444444;
+        z-index: 999; /* bring to front */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 1px solid #ddd; /* optional outer border */
     }
 
     .secondary-nav ul.active {
@@ -262,6 +301,10 @@ body {
 
     .secondary-nav ul li {
         border-bottom: 1px solid #444444;
+    }
+
+    .secondary-nav ul li:last-child {
+        border-bottom: none;
     }
 
     .secondary-nav a {
@@ -758,7 +801,7 @@ body {
     }
 }
 
-.achivements-header {
+.achievements-header {
     display: flex;
     gap: 40px;
     margin-top: 40px;
@@ -824,7 +867,21 @@ body {
 
 @media (max-width: 850px) {
     .tab-headers {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 10px;
+    }
+
+    /* Make the 4th item go to next row and center it */
+    .tab-headers > *:nth-child(4) {
+        grid-column: 2 / 3; /* place it in the middle column */
+    }
+}
+
+@media (max-width: 650px) {
+    .tab-headers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
     }
 }
 
