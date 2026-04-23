@@ -41,6 +41,129 @@ function showProgram(programId) {
     event.target.classList.add("active");
 }
 
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        if (window.innerWidth <= 1200) {
+            e.preventDefault();
+            const parentLi = this.closest('.dropdown');
+            parentLi.classList.toggle('open');
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wrapper       = document.querySelector('.slides-wrapper');
+    const slides        = document.querySelectorAll('.achievement-slide');
+    const dots          = document.querySelectorAll('.slide-dot');
+    const prevBtn       = document.querySelector('.slide-prev');
+    const nextBtn       = document.querySelector('.slide-next');
+
+    const lightbox      = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    let current = 0;
+    let timer;
+
+    // 🛑 Stop if no slides or wrapper
+    if (!wrapper || slides.length === 0) return;
+
+    // ===== SLIDESHOW =====
+
+    function goTo(index) {
+        // remove active safely
+        slides[current]?.classList.remove('active');
+        dots[current]?.classList.remove('active');
+
+        current = (index + slides.length) % slides.length;
+
+        // move slides
+        wrapper.style.transform = `translateX(-${current * 100}%)`;
+
+        // add active safely
+        slides[current]?.classList.add('active');
+        dots[current]?.classList.add('active');
+    }
+
+    function startAuto() {
+        clearInterval(timer); // 🔥 prevents duplicate timers
+        timer = setInterval(() => goTo(current + 1), 3000);
+    }
+
+    function resetAuto() {
+        startAuto();
+    }
+
+    // ===== BUTTONS =====
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goTo(current - 1);
+            resetAuto();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goTo(current + 1);
+            resetAuto();
+        });
+    }
+
+    // ===== DOTS =====
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            goTo(i);
+            resetAuto();
+        });
+    });
+
+    startAuto();
+
+    // ===== LIGHTBOX =====
+
+    if (lightbox && lightboxImg) {
+
+        slides.forEach(slide => {
+            const img = slide.querySelector('img');
+
+            if (!img) return; // 🛑 avoid crash
+
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('open');
+            });
+        });
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', () => {
+                closeLightbox();
+            });
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            lightboxImg.src = '';
+        }
+    }
+
+});
+
 // Toggle dropdown visibility
 /* document.querySelector(".dropbtn").addEventListener("click", function () {
     document.querySelector(".dropdown-content").classList.toggle("show");

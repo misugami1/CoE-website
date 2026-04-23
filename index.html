@@ -12,7 +12,9 @@
     <div id="scrollProgress" class="scroll-progress-bar"></div>
     <header class="top-header">
         <div class="logo-left zoom-effect">
-            <img src="images/logo.png" alt="BatStateU Logo">
+            <a href="https://batstateu.edu.ph/">
+                <img src="images/logo.png" alt="BatStateU Logo">
+            </a>
         </div>
 
         <div class="menu-toggle" id="mobile-menu">
@@ -22,20 +24,36 @@
         </div>
 
         <div class="logo-right zoom-effect">
-            <img src="images/logo2.png" alt="Bagong Pilipinas Logo">
+            <a href="https://www.bagongpilipinastayo.com/">
+                <img src="images/logo2.png" alt="Bagong Pilipinas Logo">
+            </a>
         </div>
 
         <nav class="main-nav" id="nav-menu">
             <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">ADMINISTRATION <i class="fas fa-chevron-down"></i></a></li>
-                <li><a href="#">PROGRAMS</a></li>
-                <li><a href="#">CAMPUSES</a></li>
-                <li><a href="#">ADMISSIONS</a></li>
-                <li><a href="#">RESEARCH AND EXTENSION</a></li>
-                <li><a href="#">STUDENTS <i class="fas fa-chevron-down"></i></a></li>
-                <li><a href="#">GLOBAL</a></li>
-                <li><a href="#">SUSTAINABILITY</a></li>
+                <li><a href="https://batstateu.edu.ph/about/">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="#">ADMINISTRATION <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Office of the University President</a></li>
+                        <li><a href="#">Board of Regents</a></li>
+                        <li><a href="#">President's Advisory Council</a></li>
+                        <li><a href="#">Administration and Finance</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://batstateu.edu.ph/programs/">PROGRAMS</a></li>
+                <li><a href="https://batstateu.edu.ph/campuses/">CAMPUSES</a></li>
+                <li><a href="https://batstateu.edu.ph/admissions/">ADMISSIONS</a></li>
+                <li class="dropdown">
+                    <a href="#">STUDENTS <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">SCHOLARSHIP</a></li>
+                        <li><a href="#">Student Affairs and Services</a></li>
+                        <li><a href="#">Campus Life</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://batstateu.edu.ph/global/">GLOBAL</a></li>
+                <li><a href="https://batstateu.edu.ph/sustainability/">SUSTAINABILITY</a></li>
             </ul>
         </nav>
     </header>
@@ -53,20 +71,25 @@
         </div>
 
         <ul id="secondary-nav-menu">
-            <li><a href="#">ALANGILAN</a></li>
-            <li><a href="#">ADMINISTRATION</a></li>
-            <li><a href="#">STUDENTS</a></li>
-            <li><a href="#">FACULTY</a></li>
-            <li><a href="#">RESEARCH</a></li>
-            <li><a href="#">EXTENSION</a></li>
-            <li><a href="#">LINKAGES</a></li>
-            <li><a href="#">FACILITIES</a></li>
+            <li><a href="https://batstateu.edu.ph/campuses/alangilan/">ALANGILAN</a></li>
+            <li><a href="https://batstateu.edu.ph/administration/">ADMINISTRATION</a></li>
+            <li><a href="https://batstateu.edu.ph/students/">STUDENTS</a></li>
+            <li><a href="https://batstateu.edu.ph/faculty/">FACULTY</a></li>
+            <li><a href="https://batstateu.edu.ph/research/">RESEARCH</a></li>
+            <li><a href="https://batstateu.edu.ph/extension/">EXTENSION</a></li>
+            <li><a href="https://batstateu.edu.ph/linkages/">LINKAGES</a></li>
+            <li><a href="https://batstateu.edu.ph/facilities/">FACILITIES</a></li>
         </ul>
     </nav>
 
     <main class="main-container">
         <div class="breadcrumbs">
-            <p>Home / Campuses / Alangilan Campus / <strong class="college-name">College of Engineering</strong></p>
+            <p>
+                <a href="https://batstateu.edu.ph/">Home</a> / 
+                <a href="https://batstateu.edu.ph/campuses/">Campuses</a> / 
+                <a href="https://batstateu.edu.ph/campuses/alangilan/">Alangilan Campus</a> / 
+                <strong>College of Engineering</strong>
+            </p>
         </div>
 
         <section class="college-intro">
@@ -79,7 +102,7 @@
                 <p>The College of Engineering at Batangas State University, The National Engineering University (BatStateU The NEU), is a recognized leader in engineering education, known for producing topnotchers and globally competitive graduates. With a strong foundation in innovation, sustainability, and nation-building, the college fully implements outcomes-based education and integrates technopreneurship into its curricula to equip students with 21st-century skills.</p>
                 <p>Several programs hold prestigious designations from the Commission on Higher Education (CHED), with Electronics Engineering named a Center of Excellence, and Electrical and Mechanical Engineering recognized as Centers of Development.</p>
                 <p>Notably, BatStateU is the first state university in the country with 
-                    <a href="#" class="abet-link">ABET</a>-accredited programs in BS Chemical, Civil, Computer, Electrical, Electronics, Industrial, Mechanical, and Sanitary Engineering—accredited by the Engineering Accreditation Commission (EAC) of US-based ABET, under both the General and Program Criteria, and by the Philippine Technological Council’s ACBET.</p>
+                    <a href="https://www.abet.org/" class="abet-link">ABET</a>-accredited programs in BS Chemical, Civil, Computer, Electrical, Electronics, Industrial, Mechanical, and Sanitary Engineering—accredited by the Engineering Accreditation Commission (EAC) of US-based ABET, under both the General and Program Criteria, and by the Philippine Technological Council’s ACBET.</p>
             </div>
         </section>
 
@@ -752,20 +775,73 @@
             </div>
         </section>
 
-        <section class="student-achievements">
-            <div class="achievements-header">
-                <h2><strong>STUDENT ACHIEVEMENTS & Recognition</strong></h2>
-            </div>
-            <div class="achievement-image">
-                <img src="images/achievement1.png" alt="Student Achievements">
+<section class="student-achievements">
+    <div class="achievements-header">
+        <h2><strong>STUDENT ACHIEVEMENTS & Recognition</strong></h2>
+    </div>
+
+    <!-- ===== ACHIEVEMENT SLIDESHOW ===== -->
+    <div class="achievement-slideshow">
+
+        <!-- ===== SLIDES WRAPPER — required for sliding transition ===== -->
+        <div class="slides-wrapper">
+
+            <!-- ===== ADD MORE .achievement-slide BLOCKS HERE FOR FUTURE IMAGES ===== -->
+            <div class="achievement-slide active">
+                <img src="images/achievement1.png" alt="Achievement 1">
+                <div class="slide-caption">𝗗𝗖𝗵𝗘 𝗰𝗹𝗮𝗶𝗺𝘀 𝟯 𝘀𝗽𝗼𝘁𝘀 𝗮𝗺𝗼𝗻𝗴 𝗪𝗘𝗗 𝗛𝗮𝗰𝗸𝗮𝘁𝗵𝗼𝗻 '𝟮𝟲 𝗙𝗶𝗻𝗮𝗹𝗶𝘀𝘁𝘀
+                    The country's premier Engineering University's Department of Chemical Engineering (DChE) proved its dominance once again after three of the department's teams joined the Final 11 of this year's World Engineering Day Hackathon 2026.
+                    Among over 270 worldwide participating entries and eight total representatives of DChE, Teams AeroMAX, IONYX, and MethanoGENZ, advanced with their excellent and sustainable solutions on varying global engineering issues.
+                    Team AeroMAX, recognizing inaccessible clean water concerns, proposed a hybrid nanomaterial aerogel for water desalination. Meanwhile, Team IONYX developed a magnetic material system that captures and removes heavy metal contaminants from water.
+                    Team MethanoGENZ also stepped up by carrying a mobile and modular digester that converts piled up food wastes on land fills into reusable energy and organic fertilizer.
+                    All registered participants showcased their own innovative means of solving issues across the world that require sustainable development through engineering and technology advancements.
+                    via Tracy Nicole B. Lopez
+                </div>
             </div>
 
-            <div class=achievements-list>
-                <ul>
-                    <li>text</li>
-                </ul>
+            <div class="achievement-slide">
+                <img src="images/achievement2.png" alt="Achievement 2">
+                <div class="slide-caption">Caption for Achievement 2</div>
             </div>
-        </section>
+
+            <div class="achievement-slide">
+                <img src="images/achievement3.png" alt="Achievement 3">
+                <div class="slide-caption">Caption for Achievement 3</div>
+            </div>
+
+            <div class="achievement-slide">
+                <img src="images/achievement4.png" alt="Achievement 4">
+                <div class="slide-caption">Caption for Achievement 4</div>
+            </div>
+            <!-- ===== END OF SLIDES ===== -->
+
+        </div>
+        <!-- ===== END SLIDES WRAPPER ===== -->
+
+        <!-- Navigation Arrows -->
+        <button class="slide-arrow slide-prev" aria-label="Previous">&#8249;</button>
+        <button class="slide-arrow slide-next" aria-label="Next">&#8250;</button>
+
+        <!-- ===== DOTS — ADD ONE MORE <span class="slide-dot"> FOR EACH NEW IMAGE ===== -->
+        <div class="slide-dots">
+            <span class="slide-dot active"></span>
+            <span class="slide-dot"></span>
+            <span class="slide-dot"></span>
+            <span class="slide-dot"></span>
+            <!-- ===== END OF DOTS ===== -->
+        </div>
+
+    </div>
+    <!-- ===== END OF SLIDESHOW ===== -->
+
+</section>
+
+<!-- ===== LIGHTBOX — PLACE BEFORE </body> ===== -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Zoomed Achievement">
+</div>
+<!-- ===== END LIGHTBOX ===== -->
 
         <section class="tabs-section">
             <div class="tab-headers">
@@ -843,7 +919,7 @@
             </div>
             -->
 
-        </div> </div>
+        </div>
 </section>
 <!--
 <section class="figures-row">
@@ -1401,24 +1477,28 @@
         
                 <div class="footer-actions">
                     <div class="contact-btn zoom-effect">
-                        <i class="fas fa-phone-alt"></i> Contact Us<br>
+                        <a href="https://batstateu.edu.ph/contact-us/"><i class="fas fa-phone-alt fa-flip-horizontal"></i> Contact Us</a><br>
                     </div>
             
                     <div class="social-icons zoom-effect">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-spotify"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/BatStateUTheNEU/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/BatStateUTheNEU"><i class="fab fa-x"></i></a>
+                        <a href="https://www.youtube.com/@BatStateUTheNEU"><i class="fab fa-youtube"></i></a>
+                        <a href="https://ph.linkedin.com/school/batstateutheneu/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/batstateutheneu/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://open.spotify.com/user/31nbomdr6pbmpwutfsxaidj4lzte"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.tiktok.com/@batstateutheneu"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
-
         <div class="footer-right">
-            <img src="images/emc2.png" alt="Graph Graphic" class="zoom-effect responsive-img emc2-img">
-            <img src="images/redspartan.png" alt="Red Spartans Logo" class="zoom-effect responsive-img">
+            <a href="https://emc2.batstate-u.edu.ph/">
+                <img src="images/emc2.png" alt="Graph Graphic" class="zoom-effect responsive-img emc2-img">
+            </a>
+
+            <a href="https://dione.batstate-u.edu.ph/ws/#/">
+                <img src="images/redspartan.png" alt="Red Spartans Logo" class="zoom-effect responsive-img">
+            </a>
         </div>
     </div>
     <hr class="orange-line">

@@ -9,6 +9,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+/* This targets every single link on your website */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -47,6 +53,10 @@ body {
     box-sizing: border-box;
 }
 
+/* =========================
+   HEADER LAYOUT ORDER
+========================= */
+
 .logo-left { order: 1; }
 .main-nav  { order: 2; }
 .menu-toggle { order: 2; }
@@ -58,6 +68,10 @@ body {
     height: auto;
     display: block;
 }
+
+/* =========================
+   NAVBAR (DESKTOP BASE)
+========================= */
 
 .main-nav {
     display: flex;
@@ -92,10 +106,61 @@ body {
     display: none;
 }
 
+/* underline effect */
 .main-nav ul li:hover {
     text-decoration: underline #d82028;
     text-decoration-thickness: 2px;
 }
+
+/* =========================
+   DROPDOWN (DESKTOP ONLY)
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.main-nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ONLY DESKTOP HOVER */
+@media (min-width: 1201px) {
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+}
+
+.main-nav .dropdown-menu li {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-nav .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.main-nav .dropdown-menu a {
+    padding: 12px 20px;
+    display: block;
+    font-weight: 500;
+}
+
+.main-nav .dropdown-menu li:hover {
+    background-color: #f9f9f9;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 @media (max-width: 1200px) {
     .top-header {
@@ -160,15 +225,74 @@ body {
         border-left: 5px solid transparent;
     }
 
-    .main-nav ul li:hover {
+    .main-nav > ul > li:hover {
         background-color: #d82028;
     }
 
-    .main-nav ul li a:hover {
+    .main-nav > ul > li:hover > a {
         color: #ffffff;
     }
-}
 
+    .main-nav > ul > li.dropdown.open {
+        background-color: transparent;
+    }
+
+    .main-nav > ul > li.dropdown.open > a {
+        color: #000000;
+    }
+
+    .main-nav > ul > li.dropdown.open:hover {
+        background-color: #d82028;
+    }
+
+    .main-nav > ul > li.dropdown.open:hover > a {
+        color: #ffffff;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    .main-nav ul li:hover {
+        text-decoration: none;
+    }
+
+    .main-nav .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: #ffffff;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: flex;
+    }
+
+
+    .main-nav .dropdown-menu li {
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 5px solid transparent;
+    }
+
+    .main-nav .dropdown-menu a {
+        padding: 12px 25px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333333;
+        font-weight: bold;
+
+    }
+
+    .main-nav .dropdown-menu li:hover {
+        background-color: #d82028;
+    }
+
+    .main-nav .dropdown-menu li a:hover {
+        color: #ffffff;
+        font-weight: bold;
+    }
+}
 /* Hero Banner */
 .hero-banner {
     background: #f8f8f8 url('images/Header.jpg') no-repeat center center;
@@ -352,6 +476,10 @@ body {
     right: 10%;
     position: relative;
     z-index: 2;
+}
+
+.breadcrumbs a:hover {
+    color: #252525;
 }
 
 @media (max-width: 1200px) {
@@ -691,22 +819,21 @@ body {
     }
 
     .canvas-wrapper {
-        height: 300px; /* Makes charts slightly shorter on small screens */
+        height: 400px;
     }
 }
 
-/* Main Section Layout - Puts side bar on the left and content on the right */
 .peo-so-section {
     display: flex;
     align-items: flex-start;
-    gap: 40px; /* space between sidebar and content */
+    gap: 40px; 
 }
 /* Sidebar Menu (Left Column) */
 .peo-so-sidebar {
     width: 350px;
-    flex-shrink: 0; /* prevents shrinking on smaller screens */
-    height: auto; /*keeps it from getting too tall */
-    overflow-y: auto; /* adds scroll if content exceeds max height */
+    flex-shrink: 0;
+    height: auto;
+    overflow-y: auto;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -757,6 +884,9 @@ body {
 }
 
 @media (max-width: 850px) {
+    .program-btn {
+        align-items: center;
+    }
     .peo-so-section {
         flex-direction: column;
     }
@@ -776,6 +906,15 @@ body {
     }
 }
 
+/* =========================
+   STUDENT ACHIEVEMENTS
+========================= */
+
+.student-achievements {
+    position: relative;
+    z-index: 1;
+}
+
 .achievements-header {
     display: flex;
     gap: 40px;
@@ -783,8 +922,236 @@ body {
     align-items: flex-start;
     position: relative;
     z-index: 3;
-    color: black; /* or whatever color you want */
-    isolation: isolate; /* prevents parent background from bleeding */
+    color: black;
+    isolation: isolate;
+}
+
+/* =========================
+   SLIDESHOW CONTAINER
+========================= */
+
+.achievement-slideshow {
+    position: relative;
+    width: 95%;
+    margin: 30px auto 0 auto;
+    border-radius: 10px;
+    background-color: transparent;
+    z-index: 3;
+    overflow: hidden;
+}
+
+/* =========================
+   SLIDES WRAPPER — holds all slides in a horizontal row
+========================= */
+
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    align-items: stretch;
+}
+
+/* =========================
+   INDIVIDUAL SLIDES
+========================= */
+
+.achievement-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.achievement-slide img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    cursor: zoom-in;
+    flex-shrink: 0;           /* image never shrinks */
+}
+
+/* =========================
+   SLIDE CAPTION
+========================= */
+
+.slide-caption {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    height: 100px;            /* fixed height — never stretches the layout */
+    overflow-y: auto;         /* scroll if text is long */
+    line-height: 1.6;
+    text-align: left;
+    flex-shrink: 0;           /* caption never shrinks */
+}
+
+/* Scrollbar styling */
+.slide-caption::-webkit-scrollbar {
+    width: 5px;
+}
+
+.slide-caption::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.slide-caption::-webkit-scrollbar-thumb {
+    background-color: #d82028;
+    border-radius: 10px;
+}
+
+/* =========================
+   ARROW BUTTONS
+========================= */
+
+.slide-arrow {
+    position: absolute;
+    top: calc(480px / 2);     /* vertically centered on the image only, not caption */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    border: none;
+    font-size: 42px;
+    line-height: 1;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.slide-arrow:hover {
+    background-color: #d82028;
+}
+
+.slide-prev {
+    left: 12px;
+}
+
+.slide-next {
+    right: 12px;
+}
+
+/* =========================
+   DOT INDICATORS
+========================= */
+
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px;
+}
+
+.slide-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.slide-dot.active {
+    background-color: #d82028;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 88vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    font-size: 38px;
+    color: #ffffff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    z-index: 10000;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: #d82028;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+    .achievements-header {
+        flex-direction: column;
+    }
+
+    .achievement-slideshow {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .achievement-slide img {
+        height: 260px;
+        border-radius: 0;
+    }
+
+    .slide-arrow {
+        top: calc(260px / 2);
+        font-size: 30px;
+        padding: 4px 12px;
+    }
+
+    .slide-caption {
+        border-radius: 0;
+        font-size: 13px;
+        padding: 10px 14px;
+        height: 80px;
+    }
+
+    .slide-dots {
+        border-radius: 0;
+    }
+
+    .lightbox-img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
 }
 
 /* Tabs Section */
@@ -982,7 +1349,14 @@ body {
     font-weight: bold;
     font-size: 18px;
     white-space: nowrap;
-    text-decoration: none;
+}
+
+.contact-btn a, 
+.contact-btn a:visited, 
+.contact-btn a:hover, 
+.contact-btn a:active {
+    color: inherit; 
+    text-decoration: none; 
 }
 
 .contact-btn i {
