@@ -295,12 +295,24 @@ body {
 }
 /* Hero Banner */
 .hero-banner {
-    background: #f8f8f8 url('images/Header.jpg') no-repeat center center;
-    background-size: contain;
+    background: url('images/Header.jpg') no-repeat center center;
+    /* 'contain' guarantees the image fits exactly inside the width without getting cut off */
+    background-size: contain; 
+    
     position: relative;
     width: 100%;
+    /* Keep this ratio for all screen sizes so it scales down perfectly */
     aspect-ratio: 15.69 / 3.35;
     overflow: hidden;
+}
+
+/* If you have other mobile styles inside this media query, keep them, 
+   but DO NOT change the aspect-ratio or background properties here. */
+@media (max-width: 992px) {
+    .hero-banner {
+        /* You can leave this empty or remove it for the banner. 
+           The desktop rules above will handle the mobile scaling perfectly. */
+    }
 }
 
 .hero-text h1 {
@@ -1235,8 +1247,8 @@ body {
     }
 
     .lightbox-img {
-        max-width: 900px;
-        max-height: 800px;
+        max-width: 95vw;
+        max-height: 95vh;
     }
 }
 
@@ -1333,7 +1345,7 @@ body {
                 url('images/faintbgg.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 20px 20%;
+    padding: 5px 20%;
     position: relative;
 }
 
@@ -1356,7 +1368,7 @@ body {
 
 @media (max-width: 1200px) {
     .blue-contact {
-        padding: 20px 5%;
+        padding: 5px 5%;
     }
 }
 
