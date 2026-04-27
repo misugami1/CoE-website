@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxImg   = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
-    // ===== ORG STRUCTURE LIGHTBOX =====
     const orgImg = document.querySelector('.org-structure img');
 
     orgImg.addEventListener('click', () => {
@@ -73,11 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('lightbox-img').alt = orgImg.alt;
         document.getElementById('lightbox').classList.add('open');
     });
-    
+
     let current = 0;
     let timer;
 
-    // 🛑 Stop if critical elements missing
     if (!imageTrack || slides.length === 0) return;
 
     // ===== SLIDESHOW =====
@@ -100,15 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startAuto() {
-        clearInterval(timer); // 🔥 prevents stacking
-        timer = setInterval(() => goTo(current + 1), 3000);
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 5000);
     }
 
     function resetAuto() {
         startAuto();
     }
 
-    // ===== BUTTONS =====
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             goTo(current - 1);
@@ -138,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         slides.forEach(slide => {
             const img = slide.querySelector('img');
-            if (!img) return; // 🛑 avoid crash
+            if (!img) return;
 
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
